@@ -14,7 +14,7 @@ import whisper
 
 model = whisper.load_model("small")
 
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 #With Stable Diffusion
 
@@ -47,11 +47,11 @@ def voice_rec():
     sd.wait()
 
     # Save as FLAC file at correct sampling rate
-    sf.write("my_Audio_file.flac", myrecording, fs)
+    sf.write("audio.wav", myrecording, fs)
     main_label.configure(text="Recording done")
 
 def transcribe():
-    audio = "my_Audio_file.flac"
+    audio = "audio.wav"
 
     # You can provide the language to the model if it is a bit to "exotic" to predict
     options = {"fp16": False, "language": None, "task": "transcribe"}
@@ -62,7 +62,7 @@ def transcribe():
 
 
 def generate_image():
-    audio = "my_Audio_file.flac"
+    audio = "audio.wav"
 
     # You can provide the language to the model if it is a bit to "exotic" to predict
     options = {"fp16": False, "language": None, "task": "translate"}
