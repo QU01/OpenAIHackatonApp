@@ -14,7 +14,7 @@ import whisper
 
 model = whisper.load_model("small")
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "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"
 
 #With Stable Diffusion
 
