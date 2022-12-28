@@ -46,7 +46,7 @@ def get_transcription():
     return transcription
 
 if __name__ == "__main__":
-    app.run(debug=False, host= '192.168.0.13')
+    app.run()
 
 
 
