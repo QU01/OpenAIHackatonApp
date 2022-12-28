@@ -9,6 +9,9 @@ model = whisper.load_model("small")
 
 @app.route("/api/upload-audio", methods=["POST"])
 def upload_audio():
+
+    print(request)
+
     if "audio" not in request.files:
         return "No se ha encontrado ningún archivo de audio en la solicitud", 400
 
@@ -43,7 +46,7 @@ def get_transcription():
     return transcription
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False, host= '192.168.0.13')
 
 
 
