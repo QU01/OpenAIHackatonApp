@@ -38,18 +38,6 @@ def upload_audio():
         }
     return jsonify(response), 200
 
-@app.route("/api/get-transcription", methods=["GET"])
-def get_transcription():
-    global transcription
-
-    if transcription is None:
-        return "No se ha procesado ningún archivo de audio todavía", 400
-
-    return transcription
-
-if __name__ == "__main__":
-    app.run()
-
 
 
 

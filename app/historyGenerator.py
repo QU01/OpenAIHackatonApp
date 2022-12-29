@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 def generate_history(prompt):
 
