@@ -4,18 +4,10 @@ import soundfile as sf
 import sounddevice as sd
 import requests
 #from diffusers import StableDiffusionPipeline
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 #from huggingface_hub import login
-import openai
-print("test")
 
 # pip install git+https://github.com/openai/whisper.git
-import whisper
 
-model = whisper.load_model("small")
-
-openai.api_key = "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"
 
 #With Stable Diffusion
 
@@ -52,43 +44,11 @@ def voice_rec():
     main_label.configure(text="Recording done")
 
 def transcribe():
-    audio = "audio.wav"
-
-    # You can provide the language to the model if it is a bit to "exotic" to predict
-    options = {"fp16": False, "language": None, "task": "transcribe"}
-    results = model.transcribe(audio, **options)
-
-    print(results["text"])
-    main_label.configure(text=results["text"])
+    pass
 
 
 def generate_image():
-    audio = "audio.wav"
-
-    # You can provide the language to the model if it is a bit to "exotic" to predict
-    options = {"fp16": False, "language": None, "task": "translate"}
-    results = model.transcribe(audio, **options)
-
-    text = results["text"]
-
-    response = openai.Image.create(prompt=text, n=2, size="1024x1024")
-
-    image = response["data"][0]["url"]
-
-    img_data = requests.get(image).content
-    with open('image_name.jpg', 'wb') as handler:
-        handler.write(img_data)
-
-    
-    image = mpimg.imread('image_name.jpg')
-    
-
-    plt.imshow(image)
-    plt.title(text)
-    plt.axis('off')
-    plt.show()
-
-    main_label.configure(text=results["text"])
+    pass
 
 app = tk.Tk()
 app.geometry("532x632")

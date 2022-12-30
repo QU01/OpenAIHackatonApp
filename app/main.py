@@ -26,10 +26,10 @@ def upload_audio():
     audio_file.save(filename)
 
     options = {"fp16": False, "language": None, "task": "transcribe"}
-    results = model.predict(audio=open(filename, 'rb'))['transcription']
+    results = model.predict(audio=open(filename, 'rb'), model="large")['transcription']
 
     history = generate_history(results)
-    image = generate_image(results)
+    image = generate_image(history)
 
     response = {
         "transcription": results,
