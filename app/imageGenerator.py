@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 def generate_image(prompt):
 
