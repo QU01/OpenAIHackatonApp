@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 import replicate
-from historyGenerator import generate_history
-from imageGenerator import generate_image
+from app.historyGenerator import generate_history
+from app.imageGenerator import generate_image
 
 app = Flask(__name__)
 replicate.default_client.api_token = "29cd0146aaedc65bc5c87cc50e26f66df46c3163"
