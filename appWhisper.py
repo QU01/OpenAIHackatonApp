@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 #from huggingface_hub import login
 import openai
+print("test")
 
 # pip install git+https://github.com/openai/whisper.git
 import whisper
